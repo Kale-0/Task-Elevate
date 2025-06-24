@@ -1,0 +1,20 @@
+Email: support@websecure.com
+Displaye URL: http://web-security-update.com
+Actual URL: hxxp://185.234.15.6.11/web-update
+
+Nmap version: 7.93
+Scan date: 2025-06-23
+Scan time: 15:45 IST
+Scan duration: 10.87 seconds
+
+Hosts scanned: 256
+Hosts up: 4
+
+Host 192.168.1.1
+  - Port 22/tcp: open (SSH)
+  - Port 80/tcp: open (HTTP)
+  - Port 443/tcp: open (HTTPS)
+
+Host 192.168.1.10
+  - Port 3306/tcp: open (MySQL)
+
