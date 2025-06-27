@@ -1,0 +1,24 @@
+sudo ufw status
+Status: inactive
+
+sudo ufw enable
+Firewall is active and enabled on system startup
+
+sudo ufw allow 22
+Rule added
+Rule added (v6)
+
+sudo ufw deny 23
+Rule added
+Rule added (v6)
+
+telnet localhost 23
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+
+sudo ufw delete deny 23
+Rule deleted
+Rule deleted (v6)
+
+sudo ufw disable
+Firewall stopped and disabled on system startup
