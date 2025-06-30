@@ -1,0 +1,28 @@
+Capturing on 'Wi-Fi: en0'
+155 packets captured
+155 packets displayed
+
+Frame 1 (74 bytes on wire, 74 bytes captured)
+    Arrival Time: Feb 20, 2023 14:30:00.123456
+    [Protocols: Ethernet:IP:TCP]
+    [Ethernet]
+        Destination: 00:11:22:33:44:55
+        Source: 66:77:88:99:00:11
+    [IP]
+        Source: 192.168.1.100
+        Destination: 216.58.194.174
+    [TCP]
+        Source Port: 53422
+        Destination Port: 80
+
+Frame 2 (114 bytes on wire, 114 bytes captured)
+    Arrival Time: Feb 20, 2023 14:30:00.123501
+    [Protocols: Ethernet:IP:DNS]
+    [Ethernet]
+        Destination: 00:11:22:33:44:55
+        Source: 66:77:88:99:00:11
+    [IP]
+        Source: 192.168.1.100
+        Destination: 8.8.8.8
+    [DNS]
+        Query: A www.google.com
