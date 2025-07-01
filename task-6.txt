@@ -1,0 +1,36 @@
+Password Strength Checker
+-------------------------
+
+Password: J@ck!Son_W@ng**51%
+
+Strength: Strong (90%)
+Entropy: 128 bits
+Length: 12 characters
+Complexity:
+  * Uppercase letters: Yes (3 characters)
+  * Lowercase letters: Yes (4 characters)
+  * Numbers: Yes (2 characters)
+  * Special characters: Yes (2 characters)
+
+Password Composition:
+  * Letters: 70%
+  * Numbers: 17%
+  * Special characters: 13%
+
+Password Strength Analysis:
+  * Brute-force attack resistance: High
+  * Dictionary attack resistance: High
+  * Rainbow table attack resistance: High
+
+Suggestions:
+  * Consider adding more characters to increase password length and complexity
+  * Avoid using common patterns or sequences in the password
+  * Use a passphrase instead of a single word
+
+Password Strength Score Breakdown:
+  * Length: 30/30
+  * Complexity: 25/25
+  * Uniqueness: 20/20
+  * Common patterns: 15/15
+
+Overall Score: 90/100
