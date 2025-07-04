@@ -1,0 +1,54 @@
+root@kali:~# sudo apt-get update
+Get:1 http://kali.download/kali kali-rolling InRelease [30.6 kB]
+Fetched 30.6 kB in 1s (34.4 kB/s)
+Reading package lists... Done
+
+root@kali:~# sudo apt-get install openvpn
+Reading package lists... Done
+Building dependency tree... Done
+The following NEW packages will be installed:
+  openvpn
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 534 kB of archives.
+After this operation, 1,427 kB of additional disk space will be used.
+Get:1 http://kali.download/kali kali-rolling/main amd64 openvpn amd64 2.5.7-1 [534 kB]
+Fetched 534 kB in 1s (534 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package openvpn.
+(Reading database ... 364723 files and directories currently installed.)
+Preparing to unpack .../openvpn_2.5.7-1_amd64.deb ...
+Unpacking openvpn (2.5.7-1) ...
+Setting up openvpn (2.5.7-1) ...
+
+root@kali:~# openssl req -x509 -newkey rsa:2048 -nodes -keyout ca.key -out ca.crt -days 3650 -subj "/C=US/ST=State/L=Locality/O=Organization/CN=VPN CA"
+Generating a RSA private key
+....................+++++
+writing new private key to 'ca.key'
+-----
+
+root@kali:~# openssl req -newkey rsa:2048 -nodes -keyout server.key -out server.csr -subj "/C=US/ST=State/L=Locality/O=Organization/CN=vpn.example.com"
+Generating a RSA private key
+................+++++
+writing new private key to 'server.key'
+-----
+
+root@kali:~# openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 365
+Signature ok
+subject=C = US, ST = State, L = Locality, O = Organization, CN = vpn.example.com
+Getting CA Private Key
+
+root@kali:~# openssl req, -newkey rsa:2048 -nodes -keyout client.key -out client.csr -subj "/C=US/ST=State/L=Locality/O=Organization/CN=client"
+Generating a RSA private key
+................+++++
+writing new private key to 'client.key'
+-----
+
+root@kali:~# openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 365
+Signature ok
+subject=C = US, ST = State, L = Locality, O = Organization, CN = client
+Getting CA Private Key
+
+root@kali:~# sudo systemctl start openvpn@server
+root@kali:~# sudo systemctl enable openvpn@server
+Synchronizing state of openvpn@server.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable openvpn@server
